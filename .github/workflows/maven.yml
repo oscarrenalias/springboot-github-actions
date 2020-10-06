@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -22,3 +21,15 @@ jobs:
         java-version: 11
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+  build_image:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Build image
+        uses: <todo>
+        with:
+          image: 'springboot-github-actions'
+          tag: ${{ github.sha }}
+          path: '.'
+          builder: 'heroku/buildpacks:18'
