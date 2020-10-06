@@ -22,10 +22,11 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-  build_image:
+  build_with_buildpack:
     runs-on: ubuntu-latest
     
     steps:
+      - uses: actions/checkout@v2
       - name: Build image
         uses: mamezou-tech/buildpacks-action@master
         with:
