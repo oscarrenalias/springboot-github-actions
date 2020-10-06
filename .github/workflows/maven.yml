@@ -27,7 +27,7 @@ jobs:
     
     steps:
       - name: Build image
-        uses: <todo>
+        uses: mamezou-tech/buildpacks-action@master
         with:
           image: 'springboot-github-actions'
           tag: ${{ github.sha }}
